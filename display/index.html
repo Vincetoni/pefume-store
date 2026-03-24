@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./node_modules/three/build/three.module.js",
+                "three/examples/jsm/": "./node_modules/three/examples/jsm/",
+                "three/addons/": "./node_modules/three/examples/jsm/",
+                "gsap": "./node_modules/gsap/index.js",
+                "gsap/": "./node_modules/gsap/",
+                "lenis": "./node_modules/lenis/dist/lenis.mjs"
+            }
+        }
+    </script>
+</head>
+<body>
+    <section class="intro">
+        <div class="intro-copy">
+            <p class="eyebrow">Maison Logos</p>
+            <h1>LOGOS PERFUME</h1>
+            <p class="intro-description">A polished amber fragrance with saffron, iris, and smoked cedar. Scroll to enter the bottle story.</p>
+        </div>
+    </section>
+
+    <section class="product-overview">
+        <div class="header-1"><h1>Crafted For Presence</h1></div>
+        <div class="header-2"><h1>Notes That Linger</h1></div>
+
+        <div class="circular-mask"></div>
+
+        <div class="tooltips">
+            <div class="tooltip">
+                <div class="icon">
+                    <ion-icon name="sparkles-outline"></ion-icon>
+                </div>
+                <div class="divider"></div>
+                <div class="title">
+                    <h2>Velvet Opening</h2>
+                </div>
+                <div class="description">
+                    <p>
+                        Bright saffron and mandarin open softly, then settle into a smooth iris glow that feels expensive from the first spray.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tooltip">
+                <div class="icon">
+                    <ion-icon name="water-outline"></ion-icon>
+                </div>
+                <div class="divider"></div>
+                <div class="title">
+                    <h2>Deep Dry Down</h2>
+                </div>
+                <div class="description">
+                    <p>
+                        Cedar, amber resin, and musk create a warm trail that stays refined on skin and leaves a memorable signature behind.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="model-container"></div>
+
+    <section class="outro">
+        <h1>Leave A Quiet Signature</h1>
+    </section>
+
+    <section class="product">
+        <nav>
+            <div class="logo"><ion-icon name="logo-ionitron"></ion-icon></div>
+            <ul class="navlinks">
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Socials</a></li>
+            </ul>
+            <button class="product-btn">
+                <span class="btn-text">shop for more</span>
+                <ion-icon name="bag-add-outline"></ion-icon>
+            </button>
+        </nav>
+        <div class="product-info">
+            <h1 id="productsName">flower-pef</h1>
+            <p id="productsDes">a flower like pef with florence and greate prodtwvbd jiwmd  bejd</p>
+        </div>
+        <div class="product-actions">
+            <p id="productsPrice">$500</p>
+            <button class="buy-btn">Buy Now</button>
+       </div>
+        <div id="productModel"></div>
+        <div id="productBackground"></ion-icon></div>
+        <div  class="right-switcher" id="rightArrowSwitcher"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+        <div  class="left-switcher" id="leftArrowSwitcher"><ion-icon name="arrow-back-outline"></ion-icon></div>
+               
+
+    </section>
+    
+    
+
+    <script 
+    type="module" 
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <script 
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
