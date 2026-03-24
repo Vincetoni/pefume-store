@@ -1,8 +1,8 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import gsap from './node_modules/gsap/index.js';
-import { ScrollTrigger } from './node_modules/gsap/ScrollTrigger.js';
-import Lenis from './node_modules/lenis/dist/lenis.mjs';
+import * as THREE from 'https://esm.sh/three@0.183.2';
+import { GLTFLoader } from 'https://esm.sh/three@0.183.2/examples/jsm/loaders/GLTFLoader.js';
+import gsap from 'https://esm.sh/gsap@3.14.2';
+import { ScrollTrigger } from 'https://esm.sh/gsap@3.14.2/ScrollTrigger';
+import Lenis from 'https://esm.sh/lenis@1.3.20';
 
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
