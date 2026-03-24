@@ -1,0 +1,396 @@
+@import url('https://fonts.cdnfonts.com/css/cormorant-garamond');
+@import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #0b0908;
+    --bg-cream: #efe7da;
+    --text-dark: #181310;
+    --text-light: #f3ede4;
+    --text-muted: rgba(243, 237, 228, 0.7);
+    --accent: #c8a76b;
+    --line-dark: rgba(24, 19, 16, 0.16);
+    --line-light: rgba(243, 237, 228, 0.2);
+    --round: 30px;
+    --ui-bg:  background-color: color-mix(in srgb, #0b0908, transparent 90%);
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "pp-neue-montreal", sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+
+h1,
+h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: clamp(3.6rem, 8vw, 7.5rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+}
+
+h2 {
+    font-size: clamp(2rem, 3vw, 3.2rem);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+}
+
+p {
+    font-size: clamp(1rem, 1.3vw, 1.1rem);
+    line-height: 1.6;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    overflow: hidden;
+}
+
+.product{
+     display: flex;
+    align-items: center;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    background:
+        radial-gradient(circle at top right, rgba(200, 167, 107, 0.16), transparent 32%),
+        var(--bg-cream);
+    color: var(--text-dark);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top:3%;
+    gap: 130px;
+}
+
+.product .navlinks{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    background-color: color-mix(in srgb, var(--bg-dark), transparent 90%);
+    padding: 15px;
+    border-radius: 30px;
+    gap: 10px;
+}
+
+.product .navlinks a{
+    text-decoration: none;
+    color: var(--text-dark);
+    
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.product .navlinks a:hover{
+    background-color: color-mix(in srgb, var(--bg-dark), transparent 45%);
+}
+
+.product-btn {
+    background-color: color-mix(in srgb, var(--bg-dark), transparent 90%);
+    width: 3em;
+    height: 3em;
+    border-radius: 30px;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0; /* IMPORTANT */
+    padding: 0 0.8em; /* gives space when expanded */
+
+    overflow: hidden;
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: width 0.3s ease, padding 0.3s ease;
+}
+
+.product-btn ion-icon {
+    font-size: 1.5em;
+    flex-shrink: 0;
+    display: block;
+}
+
+.product-btn .btn-text {
+  opacity: 0;
+  width: 0; /* KEY FIX */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-btn:hover {
+    width: 10em;
+    justify-content: flex-start; /* shift content left when expanding */
+}
+
+.product-btn:hover .btn-text {
+  opacity: 1;
+  width: auto;
+  margin-left: 0.5em;
+}
+
+.left-switcher{
+    border-radius: var(--round);
+    background-color: color-mix(in srgb, var(--bg-dark), transparent 90%);
+    color: var(--accent);
+    position: absolute;
+    padding: 10px;
+    left: 10px;
+}
+
+.right-switcher{
+    border-radius: var(--round);
+    background-color: color-mix(in srgb, var(--bg-dark), transparent 90%);
+    color: var(--accent);
+    position: absolute;
+    padding: 10px;
+    right: 10px;
+}
+
+.product-info{
+    display: flex;
+    align-items: center;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    color: var(--text-dark);
+    justify-content: flex-start;
+}
+
+#productsName{
+     position: relative;
+    z-index: 6;
+    width: min(36rem, 100%);
+    display: grid;
+    gap: 1.1rem;
+}
+
+#productsDes{
+     max-width: 28rem;
+    color: var(--text-dark);
+}
+
+.intro,
+.outro {
+    display: flex;
+    align-items: center;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    background:
+        radial-gradient(circle at top right, rgba(200, 167, 107, 0.16), transparent 32%),
+        var(--bg-dark);
+    color: var(--text-light);
+}
+
+.intro {
+    justify-content: flex-start;
+}
+
+.outro {
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.intro-copy {
+    position: relative;
+    z-index: 6;
+    width: min(36rem, 100%);
+    display: grid;
+    gap: 1.1rem;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.28rem;
+    font-size: 0.78rem;
+    color: var(--accent);
+}
+
+.intro-description {
+    max-width: 28rem;
+    color: var(--text-muted);
+}
+
+.product-overview {
+    position: relative;
+    background:
+        radial-gradient(circle at center, rgba(200, 167, 107, 0.18), transparent 32%),
+        linear-gradient(180deg, #15110f 0%, #221a16 52%, #15110f 100%);
+    color: var(--text-light);
+    z-index: 2;
+}
+
+.model-container {
+    position: fixed;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.header-1,
+.header-2 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    z-index: 6;
+    pointer-events: none;
+}
+
+.header-1 {
+    top: 0;
+}
+
+.header-2 {
+    top: 0;
+    color: var(--text-light);
+}
+
+.header-1 {
+    color: var(--text-light);
+}
+
+.header-1 h1,
+.header-2 h1 {
+    max-width: 7ch;
+}
+
+.header-2 h1 {
+    margin-left: auto;
+    text-align: right;
+}
+
+.circular-mask {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at center, rgba(200, 167, 107, 0.06), rgba(11, 9, 8, 0.74));
+    clip-path: circle(0% at 50% 50%);
+    z-index: 2;
+}
+
+.tooltips {
+    position: absolute;
+    inset: auto 0 clamp(1.75rem, 5vw, 4rem);
+    z-index: 7;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 4vw, 4rem);
+    padding: 0 clamp(1.5rem, 4vw, 4rem);
+}
+
+.tooltip {
+    max-width: 25rem;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.tooltip:nth-child(2) {
+    margin-left: auto;
+    text-align: right;
+}
+
+.tooltip .icon {
+    font-size: 1.8rem;
+    color: var(--accent);
+    overflow: hidden;
+}
+
+.tooltip .divider {
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    opacity: 0.45;
+    transform: scaleX(0);
+}
+
+.tooltip:nth-child(1) .divider {
+    transform-origin: left center;
+}
+
+.tooltip:nth-child(2) .divider {
+    transform-origin: right center;
+}
+
+.tooltip .description {
+    color: inherit;
+    opacity: 0.96;
+}
+
+.header-1 h1 .char,
+.tooltip .title .line,
+.tooltip .description .line {
+    display: block;
+    overflow: hidden;
+}
+
+.header-1 h1 .char {
+    display: inline-block;
+}
+
+.header-1 h1 .char > span,
+.tooltip .icon ion-icon,
+.tooltip .title .line > span,
+.tooltip .description .line > span {
+    display: block;
+    transform: translateY(110%);
+    will-change: transform, opacity;
+}
+
+@media (max-width: 900px) {
+    .header-1 h1,
+    .header-2 h1 {
+        max-width: 100%;
+        font-weight: 500;
+        display: block;
+    
+    }
+    .header-2{
+        top: 65%;
+    }
+    .model-container{
+        display: hidden;
+    }
+
+    .tooltips {
+        grid-template-columns: 1fr;
+        align-items: end;
+    }
+
+    .tooltip,
+    .tooltip:nth-child(2) {
+        max-width: 100%;
+        margin-left: 0;
+        padding-top: 266.9px;
+        text-align: left;
+    }
+
+    .tooltip:nth-child(2) .divider {
+        transform-origin: left center;
+    }
+}
+
+.outro {
+    position: relative;
+    z-index: 5;
+    background:
+        radial-gradient(circle at center, rgba(200, 167, 107, 0.12), transparent 34%),
+        var(--bg-dark);
+}
