@@ -24,7 +24,7 @@
             </nav>
             <div class="mobile-search">
                 <ion-icon name="search-outline"></ion-icon>
-                <input type="text" placeholder="Search perfumes">
+                <input type="text" placeholder="Search perfumes" data-search>
             </div>
         </header>
 
@@ -36,25 +36,38 @@
                 <a href="">Socials</a>
                 <div class="mobile-menu-divider"></div>
                 <p class="eyebrow">Categories</p>
-                <a href="#">Amber</a>
-                <a href="#">Floral</a>
-                <a href="#">Woody</a>
+                <a href="#" data-category="All">All</a>
+                <a href="#" data-category="Floral">Floral</a>
+                <a href="#" data-category="Warm">Warm</a>
+                <a href="#" data-category="Woody">Woody</a>
+                <a href="#" data-category="Citrus">Citrus</a>
+                <a href="#" data-category="Fresh">Fresh</a>
             </div>
         </aside>
 
         <section class="store">
             <div class="top-actions">
-                <div class="dropdown">
-                    <button class="dropbtn">Categories</button>
-                    <div class="dropdown-content">
-                        <a href="#">Amber</a>
-                        <a href="#">Floral</a>
-                        <a href="#">Woody</a>
+                <div class="dropdown" id="category-dropdown">
+                    <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </button>
+                    <div class="dropdown-content" id="categories-menu">
+                        <a href="#" data-category="All">All</a>
+                        <a href="#" data-category="Floral">Floral</a>
+                        <a href="#" data-category="Warm">Warm</a>
+                        <a href="#" data-category="Woody">Woody</a>
+                        <a href="#" data-category="Citrus">Citrus</a>
+                        <a href="#" data-category="Fresh">Fresh</a>
                     </div>
                 </div>
 
+                <div class="top-search">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input id="search-input" type="text" placeholder="Search perfumes" data-search>
+                </div>
+
                 <div class="cart">
-                    <button tooltip="cart">
+                    <button id="cart" tooltip="cart" type="button">
                         <ion-icon name="cart-outline"></ion-icon>
                     </button>
                 </div>
@@ -74,63 +87,9 @@
                     </p>
                 </div>
 
-                <div class="products-grid">
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80" alt="Floral Essence perfume bottle">
-                        </div>
-                        <div class="product-details">
-                            <h2 class="product-name">Floral Essence</h2>
-                            <p class="product-price">$500</p>
-                            <p class="product-desc">
-                                A delicate blend of jasmine, rose, and white musk, soft, elegant, and timeless.
-                            </p>
-                            <button class="product-card-btn">Add to Collection</button>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80" alt="Amber Veil perfume bottle">
-                        </div>
-                        <div class="product-details">
-                            <h2 class="product-name">Amber Veil</h2>
-                            <p class="product-price">$540</p>
-                            <p class="product-desc">
-                                Rich amber resin and warm vanilla wrapped with saffron for a polished evening trail.
-                            </p>
-                            <button class="product-card-btn">Add to Collection</button>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=80" alt="Velvet Smoke perfume bottle">
-                        </div>
-                        <div class="product-details">
-                            <h2 class="product-name">Velvet Smoke</h2>
-                            <p class="product-price">$620</p>
-                            <p class="product-desc">
-                                Smoked cedar, iris, and dark musk give this bottle a sharper, more mysterious finish.
-                            </p>
-                            <button class="product-card-btn">Add to Collection</button>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80" alt="Citrine Bloom perfume bottle">
-                        </div>
-                        <div class="product-details">
-                            <h2 class="product-name">Citrine Bloom</h2>
-                            <p class="product-price">$470</p>
-                            <p class="product-desc">
-                                Bright citrus and neroli open fresh before settling into a creamy floral heart.
-                            </p>
-                            <button class="product-card-btn">Add to Collection</button>
-                        </div>
-                    </article>
-                </div>
+                <div id="product" class="products-grid"></div>
+                   
+                
             </div>
         </section>
 

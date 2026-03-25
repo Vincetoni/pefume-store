@@ -158,6 +158,28 @@ nav {
     z-index: 110;
 }
 
+.top-search {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 1rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--text-light), transparent 15%);
+}
+
+.top-search input {
+    width: min(18vw, 14rem);
+    border: none;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    color: var(--text-dark);
+}
+
+.top-search input::placeholder {
+    color: rgba(24, 19, 16, 0.58);
+}
+
 .cart{
     background-color: color-mix(in srgb, var(--product-text), transparent 90%);
     padding: 10px;
@@ -200,7 +222,7 @@ nav {
 .dropdown button{
     border: none;
     padding: 10px;
-    background-color: color-mix(in srgb, var(--product-text), transparent 90%);
+    background-color: color-mix(in srgb, var(--text-light), transparent 10%);
     border-radius: 30px;
 }
 
@@ -208,10 +230,10 @@ nav {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: 100%;
   right: 0;
   border-radius: 30px;
-  background-color: color-mix(in srgb, var(--product-text), transparent 90%);
+  background-color: color-mix(in srgb, var(--bg-cream), transparent 15%);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -221,6 +243,11 @@ nav {
 .dropdown:hover .dropdown-content {
   display: block;
   cursor: pointer;
+}
+
+.dropdown:focus-within .dropdown-content,
+.dropdown.is-open .dropdown-content {
+  display: block;
 }
 
 /* Individual link styling */
