@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maison Logos - Luxury Perfumes</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- Product Selection Indicator -->
+    <div class="product-indicator">
+        <span id="currentProductNum">1</span> / <span id="totalProducts">3</span>
+    </div>
+
     <section class="intro">
         <div class="intro-copy">
             <p class="eyebrow">Maison Logos</p>
-            <h1>LOGOS PERFUME</h1>
-            <p class="intro-description">A polished amber fragrance with saffron, iris, and smoked cedar. Scroll to enter the bottle story.</p>
+            <h1 id="introTitle">LOGOS PERFUME</h1>
+            <p class="intro-description" id="introDesc">A polished amber fragrance with saffron, iris, and smoked cedar. Scroll to enter the bottle story.</p>
         </div>
     </section>
 
     <section class="product-overview">
-        <div class="header-1"><h1>Crafted For Presence</h1></div>
-        <div class="header-2"><h1>Notes That Linger</h1></div>
+        <div class="header-1"><h1 id="header1Text">Crafted For Presence</h1></div>
+        <div class="header-2"><h1 id="header2Text">Notes That Linger</h1></div>
 
         <div class="circular-mask"></div>
 
@@ -28,10 +33,10 @@
                 </div>
                 <div class="divider"></div>
                 <div class="title">
-                    <h2>Velvet Opening</h2>
+                    <h2 id="tooltip1Title">Velvet Opening</h2>
                 </div>
                 <div class="description">
-                    <p>
+                    <p id="tooltip1Desc">
                         Bright saffron and mandarin open softly, then settle into a smooth iris glow that feels expensive from the first spray.
                     </p>
                 </div>
@@ -43,10 +48,10 @@
                 </div>
                 <div class="divider"></div>
                 <div class="title">
-                    <h2>Deep Dry Down</h2>
+                    <h2 id="tooltip2Title">Deep Dry Down</h2>
                 </div>
                 <div class="description">
-                    <p>
+                    <p id="tooltip2Desc">
                         Cedar, amber resin, and musk create a warm trail that stays refined on skin and leaves a memorable signature behind.
                     </p>
                 </div>
@@ -55,12 +60,15 @@
     </section>
 
     <div class="model-container"></div>
+    
+    <!-- 3D Background Effects Container -->
+    <div id="backgroundEffects" class="background-effects"></div>
 
     <section class="outro">
-        <h1>Leave A Quiet Signature</h1>
+        <h1 id="outroText">Leave A Quiet Signature</h1>
     </section>
 
-    <section class="product">
+    <section class="product" id="productSection">
         <nav>
             <div class="logo"><ion-icon name="logo-ionitron"></ion-icon></div>
             <ul class="navlinks">
@@ -73,34 +81,31 @@
                 <ion-icon name="bag-add-outline"></ion-icon>
             </button>
         </nav>
-        <div class="product-info">
-            <h1 id="productsName">flower-pef</h1>
-            <p id="productsDes">a flower like pef with florence and greate prodtwvbd jiwmd  bejd</p>
+        
+        <div class="product-content">
+            <div class="product-info">
+                <h1 id="productsName">flower-pef</h1>
+                <p id="productsDes">A delicate floral symphony with notes of jasmine, rose, and white musk. Inspired by blooming gardens at dawn.</p>
+            </div>
+            <div class="product-actions">
+                <p id="productsPrice">$500</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
         </div>
-        <div class="product-actions">
-            <p id="productsPrice">$500</p>
-            <button class="buy-btn">Buy Now</button>
-       </div>
-        <div id="productModel"></div>
-        <div id="productBackground"></ion-icon></div>
-        <div  class="right-switcher" id="rightArrowSwitcher"><ion-icon name="arrow-forward-outline"></ion-icon></div>
-        <div  class="left-switcher" id="leftArrowSwitcher"><ion-icon name="arrow-back-outline"></ion-icon></div>
-               
-
+        
+        <div id="productModel" class="product-model-container"></div>
+        
+        <!-- Product Switchers -->
+        <div class="right-switcher" id="rightArrowSwitcher">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+        <div class="left-switcher" id="leftArrowSwitcher">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </div>
     </section>
-    
-    
 
-    <script 
-    type="module" 
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-
-    <script 
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="module" src="index.js"></script>
 </body>
 </html>
