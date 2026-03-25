@@ -544,7 +544,6 @@ nav {
         padding-top: 100px;
         min-height: auto;
         padding-bottom: 2rem;
-        height: 100svh;
     }
     
     .product-content {
@@ -684,7 +683,6 @@ nav {
 @media (max-width: 480px) {
     .product {
         padding: 80px 1rem 1.5rem;
-        height: 100svh;
     }
     
     .product-model-container {
