@@ -524,6 +524,10 @@ nav {
         padding-bottom: 7rem;
     }
 
+    .cursor{
+        display: none;
+    }
+
     .navbar {
         justify-content: flex-start;
         padding-top: 1rem;
