@@ -672,9 +672,11 @@ nav {
     }
     
     /* Product Indicator Mobile */
-    .product-indicator {
+     .product-indicator {
         top: 10px;
-        right: 290px; 
+        right: auto;           /* Remove the fixed right value */
+        left: 50%;             /* Position from left */
+        transform: translateX(-50%);  /* Pull back by half its width */
         padding: 6px 12px;
         font-size: 0.75rem;
     }
