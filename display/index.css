@@ -544,6 +544,7 @@ nav {
         padding-top: 100px;
         min-height: auto;
         padding-bottom: 2rem;
+        height: 100svh;
     }
     
     .product-content {
