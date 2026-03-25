@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maison Logos - Luxury Perfumes</title>
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    <main>
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+
+        <header class="navbar">
+            <label for="mobile-menu-toggle" class="mobile-menu-button">
+                <ion-icon name="menu-outline"></ion-icon>
+            </label>
+            <div class="logo"><ion-icon name="logo-ionitron"></ion-icon></div>
+            <nav>
+                <ul class="navlinks">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Socials</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-search">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" placeholder="Search perfumes">
+            </div>
+        </header>
+
+        <aside class="mobile-menu-panel">
+            <div class="mobile-menu-content">
+                <p class="eyebrow">Navigate</p>
+                <a href="">About</a>
+                <a href="">Contact</a>
+                <a href="">Socials</a>
+                <div class="mobile-menu-divider"></div>
+                <p class="eyebrow">Categories</p>
+                <a href="#">Amber</a>
+                <a href="#">Floral</a>
+                <a href="#">Woody</a>
+            </div>
+        </aside>
+
+        <section class="store">
+            <div class="top-actions">
+                <div class="dropdown">
+                    <button class="dropbtn">Categories</button>
+                    <div class="dropdown-content">
+                        <a href="#">Amber</a>
+                        <a href="#">Floral</a>
+                        <a href="#">Woody</a>
+                    </div>
+                </div>
+
+                <div class="cart">
+                    <button tooltip="cart">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </button>
+                </div>
+
+                <div class="profile">
+                    <ion-icon name="person-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="store-shell">
+                <div class="hero">
+                    <p class="eyebrow">Maison Logos Selection</p>
+                    <h1 class="hero-text">Discover Your Signature</h1>
+                    <p class="hero-copy">
+                        Fragrances crafted to leave a lasting impression, subtle,
+                        refined, and unforgettable.
+                    </p>
+                </div>
+
+                <div class="products-grid">
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80" alt="Floral Essence perfume bottle">
+                        </div>
+                        <div class="product-details">
+                            <h2 class="product-name">Floral Essence</h2>
+                            <p class="product-price">$500</p>
+                            <p class="product-desc">
+                                A delicate blend of jasmine, rose, and white musk, soft, elegant, and timeless.
+                            </p>
+                            <button class="product-card-btn">Add to Collection</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80" alt="Amber Veil perfume bottle">
+                        </div>
+                        <div class="product-details">
+                            <h2 class="product-name">Amber Veil</h2>
+                            <p class="product-price">$540</p>
+                            <p class="product-desc">
+                                Rich amber resin and warm vanilla wrapped with saffron for a polished evening trail.
+                            </p>
+                            <button class="product-card-btn">Add to Collection</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=80" alt="Velvet Smoke perfume bottle">
+                        </div>
+                        <div class="product-details">
+                            <h2 class="product-name">Velvet Smoke</h2>
+                            <p class="product-price">$620</p>
+                            <p class="product-desc">
+                                Smoked cedar, iris, and dark musk give this bottle a sharper, more mysterious finish.
+                            </p>
+                            <button class="product-card-btn">Add to Collection</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80" alt="Citrine Bloom perfume bottle">
+                        </div>
+                        <div class="product-details">
+                            <h2 class="product-name">Citrine Bloom</h2>
+                            <p class="product-price">$470</p>
+                            <p class="product-desc">
+                                Bright citrus and neroli open fresh before settling into a creamy floral heart.
+                            </p>
+                            <button class="product-card-btn">Add to Collection</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Mobile quick navigation">
+            <a href="index.html">
+                <ion-icon name="home-outline"></ion-icon>
+                <span>Home</span>
+            </a>
+            <a href="#">
+                <ion-icon name="person-outline"></ion-icon>
+                <span>Profile</span>
+            </a>
+            <a href="#">
+                <ion-icon name="cart-outline"></ion-icon>
+                <span>Cart</span>
+            </a>
+        </nav>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="store.js"></script>
+</body>
+</html>
