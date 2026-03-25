@@ -102,8 +102,8 @@ section {
     top: 20px;
     right: 20px;
     z-index: 1000;
-    background: rgba(11, 9, 8, 0.8);
-    color: var(--text-light);
+    background: rgba(11, 9, 8, 0.2);
+    color: var(--product-accent);
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -629,10 +629,16 @@ nav {
     }
     
     /* Headers Mobile */
-    .header-1,
-    .header-2 {
-        top: 15%;
-        padding: 1rem;
+    .header-1{
+        top: 48%;
+        padding: 2rem;
+        padding-left: 5rem;
+    }
+
+    .header-2{
+        top: 72%;
+        padding: 2rem;
+        padding-left: 5rem;
     }
     
     .header-1 h1,
@@ -668,7 +674,7 @@ nav {
     /* Product Indicator Mobile */
     .product-indicator {
         top: 10px;
-        right: 10px;
+        right: 290px; 
         padding: 6px 12px;
         font-size: 0.75rem;
     }
