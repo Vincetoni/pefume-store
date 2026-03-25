@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="store.css">
 </head>
 <body>
+    <div class="cursor"></div>
     <main>
         <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
 
@@ -77,6 +78,14 @@
                 </div>
             </div>
 
+            <div class="store-layout">
+
+  
+
+  <div class="product-grid" id="productGrid"></div>
+
+</div>
+
             <div class="store-shell">
                 <div class="hero">
                     <p class="eyebrow">Maison Logos Selection</p>
@@ -86,8 +95,47 @@
                         refined, and unforgettable.
                     </p>
                 </div>
+                
+
+  <div class="main-layout-row">
+  <aside class="filter-sidebar">
+    <h3>Filters</h3>
+     <div class="filter-group">
+      <p class="filter-heading">Mood</p>
+      <button class="filter-btn" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="flower">Floral</button>
+      <button class="filter-btn" data-filter="romantic">Romantic</button>
+      <button class="filter-btn" data-filter="ocean">Ocean</button>
+    </div>   
+    <div class="filter-group">
+      <p class="filter-heading">Price</p>
+      <button class="filter-btn" data-sort="low">Low → High</button>
+      <button class="filter-btn" data-sort="high">High → Low</button>
+    </div>   
+
+    </aside>
+
+  <div class="promo-grid">
+    <div class="ad-card" style="background-image: url('promo1.jpg');">
+      <div class="ad-content">
+        <span>New Season</span>
+        <h4>Up to 50% Off</h4>
+      </div>
+    </div>
+    <div class="ad-card" style="background-image: url('promo2.jpg');">
+      <div class="ad-content">
+        <span>Member Exclusive</span>
+        <h4>Free Shipping</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="devider"></div>
 
                 <div id="product" class="products-grid"></div>
+
+                
                    
                 
             </div>

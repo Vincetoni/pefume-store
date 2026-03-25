@@ -1,0 +1,229 @@
+.product-page {
+  background: var(--product-bg);
+  color: var(--product-text);
+}
+
+.product-shell {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 6vw, 4rem) 5rem;
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4rem);
+}
+
+.product-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.text-link {
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--product-text), transparent 80%);
+  transition: all 0.3s ease;
+}
+
+.text-link:hover {
+  background: color-mix(in srgb, var(--product-text), transparent 88%);
+}
+
+.product-hero {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(260px, 1.1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: 30px;
+  background: var(--product-gradient);
+  border: 1px solid color-mix(in srgb, var(--product-text), transparent 85%);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-media {
+  display: grid;
+  place-items: center;
+}
+
+.product-image-frame {
+  width: min(360px, 100%);
+  aspect-ratio: 3 / 4;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--product-text), transparent 85%);
+  background: color-mix(in srgb, var(--product-bg), white 20%);
+}
+
+.product-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.badge {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--product-accent, var(--accent));
+  color: #fff;
+}
+
+.badge-light {
+  background: color-mix(in srgb, var(--product-text), transparent 90%);
+  color: var(--product-text);
+}
+
+.product-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.price {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.06em;
+}
+
+.old-price {
+  text-decoration: line-through;
+  opacity: 0.5;
+  font-size: 0.95rem;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 0.2rem;
+}
+
+.star {
+  font-size: 1rem;
+  color: var(--product-accent, var(--accent));
+}
+
+.star.is-empty {
+  color: color-mix(in srgb, var(--product-text), transparent 70%);
+}
+
+.star.is-half {
+  background: linear-gradient(90deg, var(--product-accent, var(--accent)) 50%, color-mix(in srgb, var(--product-text), transparent 70%) 50%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.product-long {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.product-short {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.product-actions button {
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--product-text);
+  background: transparent;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.product-actions .primary {
+  background: var(--product-text);
+  color: var(--product-bg);
+}
+
+.product-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-reviews,
+.product-recommendations {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.review-card {
+  padding: 1.2rem;
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--product-text), transparent 88%);
+  background: color-mix(in srgb, var(--product-bg), white 15%);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.review-name {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.review-comment {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .product-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .product-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
