@@ -387,9 +387,7 @@ nav {
     }
 
     .logo {
-        top: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
+       display: none;
     }
 
     .mobile-search {
