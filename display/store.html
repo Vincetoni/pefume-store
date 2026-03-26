@@ -73,7 +73,7 @@
                     </button>
                 </div>
 
-                <div class="profile">
+                <div class="profile" onclick="redirectWithDelay()">
                     <ion-icon name="person-outline"></ion-icon>
                 </div>
             </div>
@@ -133,6 +133,7 @@
 
 <div class="devider"></div>
 
+                <!-- Products render here from store.js. Change the mobile card layout in store.css under .products-grid and the 768px media query. -->
                 <div id="product" class="products-grid"></div>
 
                 
@@ -140,6 +141,59 @@
                 
             </div>
         </section>
+
+        <footer class="site-footer">
+            <div class="footer-parallax" aria-hidden="true"></div>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <p class="eyebrow">Maison Logos</p>
+                    <h2 class="footer-title">Maison Logos Atelier</h2>
+                    <p class="footer-copy">
+                        An invitation to refined fragrance rituals and timeless craftsmanship.
+                    </p>
+                </div>
+
+                <div class="footer-block">
+                    <p class="footer-label">Contact</p>
+                    <div class="footer-contact">
+                        <span class="footer-icon"><ion-icon name="call-outline"></ion-icon></span>
+                        <span>+1 (212) 555-0199</span>
+                    </div>
+                    <div class="footer-contact">
+                        <span class="footer-icon">@</span>
+                        <span>maisonlogos@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="footer-block">
+                    <p class="footer-label">Social</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <ion-icon name="logo-tiktok"></ion-icon>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                        <a href="#" aria-label="Snapchat">
+                            <ion-icon name="logo-snapchat"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Maison Logos. All rights reserved.</span>
+                <span>Crafted in Lagos · Delivered worldwide.</span>
+            </div>
+        </footer>
 
         <nav class="bottom-nav" aria-label="Mobile quick navigation">
             <a href="index.html">
@@ -160,5 +214,13 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="module" src="store.js"></script>
+    <script>
+    function redirectWithDelay() {
+    // Optional: Add loading state
+        setTimeout(() => {
+            window.location.href = 'signup.html';
+        }, 300); // 300ms delay
+    }
+    </script>
 </body>
 </html>

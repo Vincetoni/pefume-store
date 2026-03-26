@@ -1,6 +1,23 @@
 @import url('https://fonts.cdnfonts.com/css/cormorant-garamond');
 @import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
 
+:root {
+    /* Default Theme (Dark/Amber) */
+    --bg-dark: #0b0908;
+    --bg-cream: #f7f1e9;
+    --text-dark: #181310;
+    --text-light: #f3ede4;
+    --text-muted: rgba(243, 237, 228, 0.7);
+    --accent: #c8a76b;
+    --line-dark: rgba(24, 19, 16, 0.16);
+    --line-light: rgba(243, 237, 228, 0.2);
+    --round: 30px;
+      --product-bg: var(--bg-cream);
+    --product-text: var(--text-dark);
+    --product-accent: var(--accent);
+    --product-gradient: radial-gradient(circle at top right, rgba(200, 167, 107, 0.16), transparent 32%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +27,7 @@
 
 body {
     min-height: 100vh;
-    
+    background: linear-gradient(180deg, #fbf7f1 0%, #f6efe6 55%, #f2e9dc 100%);
     cursor: none;
 }
 
@@ -181,28 +198,141 @@ section {
     overflow: hidden;
 }
 
+.site-footer {
+    background: #0d0b0a;
+    color: #f4efe7;
+    padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 6vw, 4rem) 2.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.site-footer * {
+    color: inherit;
+}
+
+.footer-parallax {
+    position: absolute;
+    inset: -30% 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(200, 167, 107, 0.22), transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08), transparent 50%),
+        linear-gradient(160deg, rgba(24, 19, 16, 0.9), rgba(9, 7, 6, 0.96));
+    opacity: 0.9;
+    transform: translateY(0);
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+.footer-inner {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-brand .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.footer-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.7;
+    max-width: 22rem;
+}
+
+.footer-block {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.footer-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.footer-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.footer-icon {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(244, 239, 231, 0.2);
+    font-size: 0.9rem;
+}
+
+.footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(244, 239, 231, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-2px);
+    background: rgba(244, 239, 231, 0.08);
+    border-color: rgba(244, 239, 231, 0.4);
+}
+
+.footer-bottom {
+    width: min(1200px, 100%);
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(244, 239, 231, 0.12);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    position: relative;
+    z-index: 1;
+}
+
 
 
 ion-icon{
     background: none;
 }
 
-:root {
-    /* Default Theme (Dark/Amber) */
-    --bg-dark: #0b0908;
-    --bg-cream: #efe7da;
-    --text-dark: #181310;
-    --text-light: #f3ede4;
-    --text-muted: rgba(243, 237, 228, 0.7);
-    --accent: #c8a76b;
-    --line-dark: rgba(24, 19, 16, 0.16);
-    --line-light: rgba(243, 237, 228, 0.2);
-    --round: 30px;
-      --product-bg: var(--bg-cream);
-    --product-text: var(--text-dark);
-    --product-accent: var(--accent);
-    --product-gradient: radial-gradient(circle at top right, rgba(200, 167, 107, 0.16), transparent 32%);
-}
+
 
 .navbar {
     display: flex;
@@ -385,8 +515,9 @@ nav {
 .store {
     padding: clamp(6.5rem, 9vw, 8rem) clamp(1.25rem, 4vw, 4rem) 3rem;
     background:
-        radial-gradient(circle at 80% 20%, rgba(200, 167, 107, 0.15), transparent 40%),
-        radial-gradient(circle at 20% 80%, rgba(200, 167, 107, 0.08), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(216, 178, 112, 0.22), transparent 48%),
+        radial-gradient(circle at 20% 80%, rgba(216, 178, 112, 0.16), transparent 48%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
         var(--bg-cream);
 }
 
@@ -418,6 +549,12 @@ nav {
     gap: clamp(1.25rem, 3vw, 2rem);
     align-items: stretch;
 }
+
+/* Product card size controls:
+   1. Change 240px above to make desktop cards wider or narrower.
+   2. Change the mobile columns in the 768px media query below:
+      - repeat(2, 1fr) = 2 cards per row
+      - repeat(3, 1fr) = 3 cards per row on mobile */
 
 .product-card {
     width: 100%;
@@ -484,13 +621,12 @@ nav {
 }
 
 .product-card-btn {
-    margin-top: 1rem;
-    padding: 0.7em 1.5em;
+    padding: 0.7em 1.4em;
     border-radius: 30px;
 
     border: 1px solid var(--text-dark);
-    background: transparent;
-    color: var(--text-dark);
+    background: var(--text-dark);
+    color: #ffffff;
 
     font-size: 0.8rem;
     letter-spacing: 0.05em;
@@ -498,20 +634,58 @@ nav {
     transition: all 0.3s ease;
 }
 
+.product-card-actions {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.product-card-cart {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--text-dark);
+    background: transparent;
+    display: grid;
+    place-items: center;
+    transition: all 0.3s ease;
+}
+
+.product-card-cart ion-icon {
+    font-size: 1rem;
+}
+
 .product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-.product-card:hover .product-card-btn {
+.product-card:hover .product-card-btn .product-card-cart {
     background: var(--text-dark);
     color: var(--bg-cream);
 }
 
 .product-card-btn:hover {
     background: var(--text-dark);
-    color: var(--bg-cream);
+    color: #ffffff;
     transform: translateY(-2px);
+}
+
+.product-card-btn:active {
+    background: var(--text-dark);
+    color: #ffffff;
+    transform: translateY(0);
+}
+
+.product-card-cart:hover {
+    background: var(--text-dark);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.product-card-cart:hover ion-icon {
+    color: #ffffff;
 }
 
 .product-image:hover img{
@@ -722,14 +896,49 @@ nav {
 }
 
 @media (max-width: 768px) {
+    .products-grid {
+        /* Change 2 to 3 here if you want a tighter 3-by-3 style mobile layout. */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.9rem;
+    }
 
     .product-card {
         max-width: 100%;
-        padding: 1.5rem;
+        padding: 1rem;
+        border-radius: 16px;
     }
 
     .product-image {
-        height: 220px;
+        height: 140px;
+        border-radius: 12px;
+    }
+
+    .product-name {
+        font-size: 1.15rem;
+    }
+
+    .product-price {
+        font-size: 0.82rem;
+    }
+
+    .product-desc {
+        font-size: 0.76rem;
+        line-height: 1.45;
+    }
+
+    .product-card-actions {
+        margin-top: 0.5rem;
+        gap: 0.45rem;
+    }
+
+    .product-card-btn {
+        padding: 0.6em 1em;
+        font-size: 0.72rem;
+    }
+
+    .product-card-cart {
+        width: 34px;
+        height: 34px;
     }
 
     .store-layout {

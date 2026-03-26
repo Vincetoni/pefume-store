@@ -48,9 +48,14 @@ function displayProducts(productsToDisplay) {
                 <h2 class="product-name">${perfume.name}</h2>
                 <p class="product-price">$${perfume.price}</p>
                 <p class="product-desc">${perfume.shortDescription}</p>
-                <button class="product-card-btn" data-product-id="${perfume.id}" type="button">
-                    View Details
-                </button>
+                <div class="product-card-actions">
+                    <button class="product-card-btn" data-product-id="${perfume.id}" type="button">
+                        View Details
+                    </button>
+                    <button class="product-card-cart" data-product-id="${perfume.id}" type="button" aria-label="Add to cart">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </button>
+                </div>
             </div>
         </article>
     `
@@ -207,6 +212,22 @@ document.querySelectorAll('[data-sort]').forEach((btn) => {
 // Product card click -> preview
 if (productContainer) {
   productContainer.addEventListener('click', (event) => {
+    const cartButton = event.target.closest('.product-card-cart');
+    if (cartButton) {
+      event.stopPropagation();
+      const productId = Number(cartButton.dataset.productId);
+      if (!Number.isNaN(productId)) {
+        const cart = getCart();
+        const product = products.find((item) => item.id === productId);
+        if (product) {
+          cart.push(product);
+          localStorage.setItem(CART_KEY, JSON.stringify(cart));
+          alert(`${product.name} has been added to your cart.`);
+        }
+      }
+      return;
+    }
+
     const card = event.target.closest('[data-product-id]');
     if (!card) return;
 
@@ -251,4 +272,25 @@ if (cursor) {
     cursor.style.left = `${event.clientX}px`;
     cursor.style.top = `${event.clientY}px`;
   });
+}
+
+const footer = document.querySelector('.site-footer');
+const footerParallax = document.querySelector('.footer-parallax');
+
+function updateFooterParallax() {
+  if (!footer || !footerParallax) return;
+  const rect = footer.getBoundingClientRect();
+  const viewport = window.innerHeight || 0;
+  const total = rect.height + viewport;
+  const progress = Math.min(1, Math.max(0, (viewport - rect.top) / total));
+  const translate = (progress * 60 - 30).toFixed(2);
+  footerParallax.style.transform = `translateY(${translate}px)`;
+}
+
+if (footer && footerParallax) {
+  updateFooterParallax();
+  window.addEventListener('scroll', () => {
+    window.requestAnimationFrame(updateFooterParallax);
+  });
+  window.addEventListener('resize', updateFooterParallax);
 }

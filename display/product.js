@@ -136,7 +136,12 @@ function renderProduct(product) {
               <h2 class="product-name">${item.name}</h2>
               <p class="product-price">$${item.price}</p>
               <p class="product-desc">${item.shortDescription}</p>
-              <button class="product-card-btn" data-product-id="${item.id}" type="button">View Details</button>
+              <div class="product-card-actions">
+                <button class="product-card-btn" data-product-id="${item.id}" type="button">View Details</button>
+                <button class="product-card-cart" data-product-id="${item.id}" type="button" aria-label="Add to cart">
+                  <ion-icon name="cart-outline"></ion-icon>
+                </button>
+              </div>
             </div>
           </article>
         `
@@ -172,6 +177,22 @@ function wireRecommendationClicks() {
   if (!recommendationsEl) return;
 
   recommendationsEl.addEventListener('click', (event) => {
+    const cartButton = event.target.closest('.product-card-cart');
+    if (cartButton) {
+      event.stopPropagation();
+      const productId = Number(cartButton.dataset.productId);
+      if (!Number.isNaN(productId)) {
+        const cart = getCart();
+        const product = products.find((item) => item.id === productId);
+        if (product) {
+          cart.push(product);
+          saveCart(cart);
+          alert(`${product.name} has been added to your cart.`);
+        }
+      }
+      return;
+    }
+
     const card = event.target.closest('[data-product-id]');
     if (!card) return;
     const productId = Number(card.dataset.productId);
@@ -196,12 +217,12 @@ function wireRecommendationClicks() {
 
 function initCursor() {
   const cursor = document.querySelector('.cursor');
-  if (!cursor) return;
-
+if (cursor) {
   window.addEventListener('mousemove', (event) => {
     cursor.style.left = `${event.clientX}px`;
     cursor.style.top = `${event.clientY}px`;
   });
+}
 }
 
 const selectedProduct = getSelectedProduct() || products[0];

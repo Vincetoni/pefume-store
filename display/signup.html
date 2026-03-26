@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <section class="auth-page">
+
+        <div class="auth-left">
+            <div class="auth-overlay">
+                <h1>Create Your Signature </h1>
+                <p>join a world of refined fragrance Crafted to design your presence.</p>
+            </div>
+        </div>
+
+        <div class="auth-right">
+            <form class="auth-form">
+                <h2>sing up</h2>
+                
+                <input type="text" id="username" placeholder="username">
+                <p id="userError" class="error-message is-hidden" aria-live="polite"></p>
+                <input type="email" placeholder="Email" id="Email" required>
+                <p id="emailError" class="error-message is-hidden" aria-live="polite"></p>
+                <input type="password" placeholder="Password" id="password" required>
+                <p id="passwordError" class="error-message is-hidden" aria-live="polite"></p>
+                <input type="password" placeholder="Confirm Password" id="confirmPassword" required>
+                <p id="confirmError" class="error-message is-hidden" aria-live="polite"></p>
+                <p id="authError" class="error-message is-hidden" aria-live="polite"></p>
+
+                <button type="submit" id="submit">Create Account</button>
+
+                
+                <p class="auth-switch">Already have an account? <a href="login.html">Sign in</a></p>
+            </form>
+        </div>
+    </section>
+
+    <script src="auth.js"></script>
+</body>
+</html>

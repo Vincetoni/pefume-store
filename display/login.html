@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <section class="auth-page">
+
+        <div class="auth-left">
+            <div class="auth-overlay">
+                <h1>Enter Your Signature </h1>
+                <p>welcome back to a world of refined fragrance Crafted to design your presence.</p>
+            </div>
+        </div>
+
+        <div class="auth-right">
+            <form class="auth-form">
+                <h2>log in</h2>
+
+                <input type="email" placeholder="Email" id="Email" required>
+                <input type="password" placeholder="Password" id="password" required>
+                <p id="authError" class="error-message is-hidden" aria-live="polite"></p>
+                
+
+                <button type="submit" id="submit">login</button>
+
+                <p class="auth-switch">dont have an account? <a href="signup.html">sign up</a></p>
+            </form>
+        </div>
+    </section>
+
+    <script src="auth.js"></script>
+</body>
+</html>

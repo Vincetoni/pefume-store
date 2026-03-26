@@ -45,8 +45,30 @@
     </section>
 
     <section class="product-reviews">
-      <h2>Client Notes</h2>
+      <div class="reviews-header">
+        <div>
+          <p class="eyebrow">Top Reviews</p>
+          <h2>Client Notes</h2>
+        </div>
+        <button class="text-link" id="view-all-reviews" type="button">View All</button>
+      </div>
       <div class="reviews-grid" id="reviews-list"></div>
+
+      <div class="review-form">
+        <h3 class="review-form-title">Add a Review</h3>
+        <div class="review-fields">
+          <input id="review-name" type="text" placeholder="Your name">
+          <select id="review-rating">
+            <option value="5">5 Stars</option>
+            <option value="4.5">4.5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3.5">3.5 Stars</option>
+            <option value="3">3 Stars</option>
+          </select>
+        </div>
+        <textarea id="review-comment" rows="3" placeholder="Share your experience..."></textarea>
+        <button class="primary" id="submit-review" type="button">Post Review</button>
+      </div>
     </section>
 
     <section class="product-recommendations">
@@ -55,6 +77,8 @@
     </section>
   </main>
 
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script type="module" src="product.js"></script>
 </body>
 </html>
