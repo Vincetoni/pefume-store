@@ -399,7 +399,7 @@ nav {
 
 .top-actions {
     position: fixed;
-    right: 3%;
+    right: 0.5%;
     top: 3%;
     display: flex;
     align-items: center;
@@ -412,6 +412,7 @@ nav {
     align-items: center;
     gap: 0.55rem;
     padding: 0.8rem 1rem;
+    padding-right: 3px;
     border-radius: 999px;
     background: color-mix(in srgb, var(--text-light), transparent 15%);
 }
@@ -448,18 +449,40 @@ nav {
      background-color: color-mix(in srgb, var(--product-text), transparent 85%);
 }
 
-.profile{
+.check-out{
     background-color: color-mix(in srgb, var(--product-text), transparent 90%);
     padding: 10px;
     height: 40px;
     width:  40px;
     text-align: center;
     border-radius: 30px;
+    border: none;
+    transition: 0.5s;
+}
+
+.profile{
+    background-color: color-mix(in srgb, var(--product-text), transparent 90%);
+    padding: 10px;
+    height: 40px;
+    width:  40px;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
     transition: 0.5s;
 }
 
 .profile:hover{
     background-color: color-mix(in srgb, var(--product-text), transparent 85%);
+}
+
+.user-pill{
+    background-color: color-mix(in srgb, var(--product-text), transparent 90%);
+    padding: 10px;
+    height: 40px;
+    width:  auto;
+    text-align: center;
+    border-radius: 30px;
+    transition: 0.5s;
 }
 
 /* Container for the menu */

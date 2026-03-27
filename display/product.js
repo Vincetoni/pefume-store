@@ -17,6 +17,13 @@ const reviewsList = document.getElementById('reviews-list');
 const recommendationsEl = document.getElementById('recommendations');
 const addToCartBtn = document.getElementById('add-to-cart');
 const buyNowBtn = document.getElementById('buy-now');
+const reviewUserNote = document.getElementById('review-user-note');
+const reviewRatingInput = document.getElementById('review-rating');
+const reviewCommentInput = document.getElementById('review-comment');
+const submitReviewBtn = document.getElementById('submit-review');
+
+const CURRENT_USER_KEY = 'currentUser';
+const PRODUCT_REVIEWS_KEY = 'productReviews';
 
 function getCart() {
   const raw = localStorage.getItem(CART_KEY);
@@ -29,6 +36,32 @@ function getCart() {
 
 function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+// localStorage stores strings, so we parse JSON back into an object before using it.
+function getCurrentUser() {
+  const raw = localStorage.getItem(CURRENT_USER_KEY);
+  try {
+    const user = raw ? JSON.parse(raw) : null;
+    console.log('product currentUser:', user);
+    return user;
+  } catch (error) {
+    console.log('product currentUser parse error:', error);
+    return null;
+  }
+}
+
+function getStoredReviews() {
+  const raw = localStorage.getItem(PRODUCT_REVIEWS_KEY);
+  try {
+    return raw ? JSON.parse(raw) : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function saveStoredReviews(reviewMap) {
+  localStorage.setItem(PRODUCT_REVIEWS_KEY, JSON.stringify(reviewMap));
 }
 
 function renderStars(rating) {
@@ -61,6 +94,29 @@ function applyTheme(product) {
   if (productHero && product.backgroundEffect) {
     productHero.style.background = product.backgroundEffect;
   }
+}
+
+function getProductReviews(product) {
+  const storedReviews = getStoredReviews();
+  const saved = storedReviews[product.id] || [];
+  return [...product.reviews, ...saved];
+}
+
+function renderReviews(product) {
+  if (!reviewsList || !product) return;
+
+  const reviews = getProductReviews(product);
+  reviewsList.innerHTML = reviews
+    .map(
+      (review) => `
+        <article class="review-card">
+          <div class="review-name">${review.name}</div>
+          <div class="review-stars">${renderStars(review.rating)}</div>
+          <p class="review-comment">${review.comment}</p>
+        </article>
+      `
+    )
+    .join('');
 }
 
 function renderProduct(product) {
@@ -106,19 +162,7 @@ function renderProduct(product) {
     ratingEl.innerHTML = `${renderStars(product.rating)}<span>${product.rating.toFixed(1)} / 5</span>`;
   }
 
-  if (reviewsList) {
-    reviewsList.innerHTML = product.reviews
-      .map(
-        (review) => `
-          <article class="review-card">
-            <div class="review-name">${review.name}</div>
-            <div class="review-stars">${renderStars(review.rating)}</div>
-            <p class="review-comment">${review.comment}</p>
-          </article>
-        `
-      )
-      .join('');
-  }
+  renderReviews(product);
 
   if (recommendationsEl) {
     const recommendations = products
@@ -160,9 +204,62 @@ function renderProduct(product) {
 
   if (buyNowBtn) {
     buyNowBtn.onclick = () => {
-      window.location.href = 'checkout.html';
+      window.location.href = 'shop/checkout.html';
     };
   }
+}
+
+function updateReviewUserNote() {
+  if (!reviewUserNote) return;
+  const currentUser = getCurrentUser();
+
+  if (currentUser?.username) {
+    reviewUserNote.textContent = `Reviewing as ${currentUser.username}`;
+    return;
+  }
+
+  reviewUserNote.textContent = 'Post a review while logged in. Debug: currentUser was not found in localStorage.';
+}
+
+function wireReviewForm(product) {
+  if (!submitReviewBtn || !reviewCommentInput || !reviewRatingInput) return;
+
+  updateReviewUserNote();
+
+  submitReviewBtn.addEventListener('click', () => {
+    const currentUser = getCurrentUser();
+
+    if (!currentUser?.username) {
+      alert('Please log in before posting a review.');
+      window.location.href = 'login.html';
+      return;
+    }
+
+    const comment = reviewCommentInput.value.trim();
+    const rating = Number(reviewRatingInput.value);
+
+    if (!comment) {
+      alert('Please write a review comment first.');
+      return;
+    }
+
+    const reviewMap = getStoredReviews();
+    const productReviews = reviewMap[product.id] || [];
+
+    // We pull the username from the saved currentUser object in localStorage.
+    productReviews.unshift({
+      name: currentUser.username,
+      rating,
+      comment
+    });
+
+    reviewMap[product.id] = productReviews;
+    saveStoredReviews(reviewMap);
+    renderReviews(product);
+
+    reviewCommentInput.value = '';
+    reviewRatingInput.value = '5';
+  });
 }
 
 function getSelectedProduct() {
@@ -227,5 +324,6 @@ if (cursor) {
 
 const selectedProduct = getSelectedProduct() || products[0];
 renderProduct(selectedProduct);
+wireReviewForm(selectedProduct);
 wireRecommendationClicks();
 initCursor();

@@ -1,0 +1,15 @@
+{
+  "note": "This file is only a readable example. The current browser app still saves users in localStorage, not in this JSON file.",
+  "currentUserShape": {
+    "username": "vince",
+    "email": "vince@example.com",
+    "password": "Password1"
+  },
+  "localStorageKeys": [
+    "users",
+    "currentUser",
+    "cart",
+    "productReviews",
+    "selectedProductId"
+  ]
+}

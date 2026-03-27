@@ -73,9 +73,10 @@
                     </button>
                 </div>
 
-                <div class="profile" onclick="redirectWithDelay()">
+                <button class="profile" id="profile-button" type="button" aria-label="Profile">
                     <ion-icon name="person-outline"></ion-icon>
-                </div>
+                </button>
+                <p class="user-pill" id="store-user-label"></p>
             </div>
 
             <div class="store-layout">
@@ -200,11 +201,12 @@
                 <ion-icon name="home-outline"></ion-icon>
                 <span>Home</span>
             </a>
-            <a href="#" onclick="redirectWithDelay()">
+            <a href="#" id="mobile-profile-link">
                 <ion-icon name="person-outline"></ion-icon>
-                <span>Profile</span>
+                <span id="mobile-profile-text">Login</span>
             </a>
-            <a href="#">
+            
+            <a href="shop/cart.html">
                 <ion-icon name="cart-outline"></ion-icon>
                 <span>Cart</span>
             </a>
@@ -214,13 +216,5 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="module" src="store.js"></script>
-    <script>
-    function redirectWithDelay() {
-    // Optional: Add loading state
-        setTimeout(() => {
-            window.location.href = 'signup.html';
-        }, 300); // 300ms delay
-    }
-    </script>
 </body>
 </html>

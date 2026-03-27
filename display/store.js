@@ -6,14 +6,63 @@ const dropdownButton = dropdown ? dropdown.querySelector('.dropbtn') : null;
 const searchInputs = document.querySelectorAll('[data-search]');
 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 const cartBtn = document.getElementById('cart');
+const profileButton = document.getElementById('profile-button');
+const storeUserLabel = document.getElementById('store-user-label');
+const mobileProfileLink = document.getElementById('mobile-profile-link');
+const mobileProfileText = document.getElementById('mobile-profile-text');
 
 const STORAGE_SELECTED_KEY = 'selectedProductId';
 const CART_KEY = 'cart';
+const CURRENT_USER_KEY = 'currentUser';
 
 let activeCategory = 'All';
 let searchTerm = '';
 let currentFilter = 'all';
 let currentSort = null;
+
+function getCurrentUser() {
+  const raw = localStorage.getItem(CURRENT_USER_KEY);
+  try {
+    return raw ? JSON.parse(raw) : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function clearCurrentUser() {
+  localStorage.removeItem(CURRENT_USER_KEY);
+}
+
+function goToProfile() {
+  window.location.href = 'shop/profile.html';
+}
+
+function initUserUI() {
+  const currentUser = getCurrentUser();
+  const username = currentUser?.username || 'Guest';
+
+  if (storeUserLabel) {
+    storeUserLabel.textContent = currentUser ? `${username}` : '';
+  }
+
+  if (mobileProfileText) {
+    mobileProfileText.textContent = currentUser ? username : 'Login';
+  }
+
+  if (profileButton) {
+    profileButton.addEventListener('click', goToProfile);
+    profileButton.title = currentUser ? `Logged in as ${username}` : 'Go to login';
+  }
+
+  if (mobileProfileLink) {
+    mobileProfileLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      goToProfile();
+    });
+  }
+
+  console.log('store currentUser:', currentUser);
+}
 
 function setSelectedProduct(productId) {
   localStorage.setItem(STORAGE_SELECTED_KEY, String(productId));
@@ -249,22 +298,15 @@ if (productContainer) {
   });
 }
 
-// Cart button summary
+// Cart button -> cart page
 if (cartBtn) {
   cartBtn.addEventListener('click', () => {
-    const cart = getCart();
-    if (!cart.length) {
-      alert('Your collection is currently empty.');
-      return;
-    }
-
-    const total = cart.reduce((sum, item) => sum + Number(item.price || 0), 0);
-    const itemNames = cart.map((item) => item.name).join('\n- ');
-    alert(`YOUR COLLECTION:\n- ${itemNames}\n\nTOTAL VALUE: $${total}`);
+    window.location.href = 'shop/cart.html';
   });
 }
 
 applyFilters();
+initUserUI();
 
 const cursor = document.querySelector('.cursor');
 if (cursor) {

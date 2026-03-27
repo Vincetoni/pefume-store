@@ -15,6 +15,8 @@
       <a class="brand" href="store.html">Maison Logos</a>
       <div class="header-actions">
         <a class="text-link" href="store.html">Back to Store</a>
+        <a class="text-link" href="shop/cart.html">Cart</a>
+        <a class="text-link" href="shop/profile.html">Profile</a>
       </div>
     </header>
 
@@ -57,7 +59,8 @@
       <div class="review-form">
         <h3 class="review-form-title">Add a Review</h3>
         <div class="review-fields">
-          <input id="review-name" type="text" placeholder="Your name">
+          <!-- Reviewer name now comes from localStorage.currentUser.username in product.js -->
+          <p class="review-user-note" id="review-user-note">Post a review while logged in.</p>
           <select id="review-rating">
             <option value="5">5 Stars</option>
             <option value="4.5">4.5 Stars</option>
